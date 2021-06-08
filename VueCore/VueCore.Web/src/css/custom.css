@@ -1,0 +1,77 @@
+.app-header.navbar .navbar-brand
+{
+    background-color: #fff;
+}
+.form-control-validation {
+    display: none;
+}
+
+.multiselect__tag {
+    background-color:#00a7e1
+}
+
+.multiselect__tag-icon:focus, .multiselect__tag-icon:hover {
+    background-color: #037298
+}
+
+.card {
+    background-color: whitesmoke;
+    box-shadow: 3px 3px 10px grey;
+}
+
+.form-header {
+    background-color: whitesmoke;
+    box-shadow: 3px 3px 10px black;
+}
+
+.form-header-card {
+    border:none;
+    box-shadow:none;
+}
+
+.multiselect__option--highlight {
+    background-color: #00a7e1;
+}
+
+.multiselect__option--highlight:after {
+    background-color: #00a7e1;
+}
+
+.multiselect--above .multiselect__content-wrapper {
+    box-shadow: black 0px 0px 10px;
+}
+
+.multiselect--below .multiselect__content-wrapper {
+    box-shadow: black 0px 0px 10px;
+}
+
+.multiselect__content-wrapper {
+    box-shadow: black 0px 0px 10px;
+}
+
+.multiselect__input {
+    border: 1px solid black;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.tox-notifications-container {
+    display:none;
+}
+
+.tox-statusbar__branding {
+    display:none;
+}
+
+.timeUtcColumn {
+    width:12%
+} 
+
+#components{
+    height:100%;
+}
+
+.b-table-sticky-header {
+    overflow-y: auto;
+    max-height: 600px;
+}

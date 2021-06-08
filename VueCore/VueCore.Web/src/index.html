@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Wat">
+    <meta name="author" content="Dumb Apps @DateTime.Now.Year">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,jQuery,CSS,HTML,RWD,Dashboard,Vue,Vue.js,React,React.js">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>@(ViewBag.Title ?? "Dumb App")</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/bootstrap-vue/dist/bootstrap-vue.min.css" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="~/vendors/css/flag-icon.min.css" rel="stylesheet">
+    <link href="~/vendors/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/vendors/css/simple-line-icons.min.css" rel="stylesheet">
+
+    <!-- Main styles for this application -->
+    <link href="~/lib/vue-multiselect/vue-multiselect.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <!-- Styles required by this views -->
+    <link href="~/vendors/css/daterangepicker.min.css" rel="stylesheet">
+    <link href="~/vendors/css/gauge.min.css" rel="stylesheet">
+    <link href="~/vendors/css/toastr.min.css" rel="stylesheet">
+    <link href="~/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    @using System
+    @using Microsoft.Extensions.Configuration
+    @inject IConfiguration Configuration
+    @{
+    var logo = Configuration["Logo"];
+    var version = GetType().Assembly.GetName().Version.ToString();
+    }
+    <div id="components">
+        <!--<header>
+        <b-navbar toggleable="lg" type="dark" variant="light" fixed="top">
+            <b-navbar-brand href="/#/Search">
+                <img src="@Url.Content(logo)" style="width:200px;height:55px;" title="@version" />
+            </b-navbar-brand>
+
+            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+            <div style="position: absolute; right: 0; margin-right: 5%">
+                <partial name="_LoginPartial" />
+            </div>
+        </b-navbar>
+    </header>-->
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">ASP.NET Core</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-page="/About">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-page="/Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div v-bind:class="{ 'sidebar-minimized': sidebarShow }" class="app-body" id="bodyDiv">
+            <div class="sidebar sidebar-fixed">
+                <nav class="sidebar-nav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <db-selector></db-selector>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#/LogViewer"><i class="icon-magnifier"></i>Log Viewer</a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <button class="sidebar-minimizer brand-minimizer" type="button" v-on:click="sidebarShow = !sidebarShow"></button>
+            </div>
+            <!-- Main content -->
+            <main class="main">
+
+                <!--<div class="container-fluid">
+                <ol class="breadcrumb">
+                    @RenderSection("Breadcrumbs", required: false)
+                </ol>
+
+
+            </div>-->
+                @RenderBody()
+                <router-view style="height:100%"></router-view>
+
+                <!-- /.conainer-fluid -->
+            </main>
+
+        </div>
+        <div id="notificationArea" class="navbar-fixed-bottom text-center">
+            <div id="notificationMessage" class="btn-lg hidden"></div>
+        </div>
+        <div class="loading hidden"><div class="loading-circle"></div></div>
+        @*@RenderSection("Scripts", required: false)*@
+
+        <footer class="app-footer">
+            <span><a href="~/">DumbApps</a> © @DateTime.Now.Year.</span>
+            <span class="ml-auto">Powered by <a href="https://bang-energy.com/" target="_blank">Bang</a></span>
+        </footer>
+    </div>
+</body>
+</html>

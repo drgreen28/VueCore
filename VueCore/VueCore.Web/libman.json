@@ -1,0 +1,113 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "vue@2.6.11",
+      "destination": "wwwroot/vue/",
+      "files": [
+        "vue.min.js",
+        "vue.esm.browser.min.js"
+      ]
+    },
+    {
+      "library": "vuex@3.5.1",
+      "destination": "wwwroot/vuex/",
+      "files": [
+        "vuex.min.js",
+        "vuex.esm-browser.min.js"
+      ]
+    },
+    {
+      "library": "jquery@3.5.1",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "bootstrap@4.5.0",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "dist/css/bootstrap.min.css"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "bootstrap-vue@2.16.0",
+      "destination": "wwwroot/bootstrap-vue/",
+      "files": [
+        "dist/bootstrap-vue.min.css",
+        "dist/bootstrap-vue.min.js"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "vue-router@3.3.4",
+      "destination": "wwwroot/lib/vue-router/",
+      "files": [
+        "dist/vue-router.min.js"
+      ]
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/lib/vue-multiselect/",
+      "destination": "wwwroot/lib/vue-multiselect/",
+      "files": [
+        "vue-multiselect.min.css",
+        "vue-multiselect.min.css.map",
+        "vue-multiselect.min.js"
+      ]
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/css/",
+      "destination": "wwwroot/css/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/img/",
+      "destination": "wwwroot/img/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/vendors/css/",
+      "destination": "wwwroot/vendors/css/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/vendors/flags/1x1/",
+      "destination": "wwwroot/vendors/flags/1x1/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/vendors/flags/4x3/",
+      "destination": "wwwroot/vendors/flags/4x3/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/vendors/fonts/",
+      "destination": "wwwroot/vendors/fonts/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/vendors/img/",
+      "destination": "wwwroot/vendors/img/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "src/vendors/js/",
+      "destination": "wwwroot/vendors/js/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "@microsoft/signalr@latest",
+      "destination": "wwwroot/lib/microsoft/signalr/",
+      "files": [
+        "dist/browser/signalr.js",
+        "dist/browser/signalr.min.js"
+      ]
+    }
+  ]
+}

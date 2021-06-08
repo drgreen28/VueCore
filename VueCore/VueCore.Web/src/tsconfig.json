@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "ES6",
+    "module": "ES6",
+    "moduleResolution": "node"
+  },
+  "compileOnSave": true,
+  "include": [
+    "../../"
+  ],
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Models\AppSettingKeyModel.cs">
+      <Generator>DtsGenerator</Generator>
+      <LastGenOutput>AppSettingKeyModel.cs.d.ts</LastGenOutput>
+    </Compile>
+    <Compile Update="Models\AppSettingModel.cs">
+      <Generator>DtsGenerator</Generator>
+      <LastGenOutput>AppSettingModel.cs.d.ts</LastGenOutput>
+    </Compile>
+    <Compile Update="Models\ElmahErrorModel.cs">
+      <Generator>DtsGenerator</Generator>
+      <LastGenOutput>ElmahErrorModel.cs.d.ts</LastGenOutput>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Models\AppSettingKeyModel.cs.d.ts">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppSettingKeyModel.cs</DependentUpon>
+    </None>
+    <None Update="Models\AppSettingModel.cs.d.ts">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppSettingModel.cs</DependentUpon>
+    </None>
+    <None Update="Models\ElmahErrorModel.cs.d.ts">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ElmahErrorModel.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+
+</Project>

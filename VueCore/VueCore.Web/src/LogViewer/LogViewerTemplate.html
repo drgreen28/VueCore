@@ -1,0 +1,95 @@
+﻿<div class="overflow-auto" style="height:100%">
+    <div style="height:100%">
+        <b-card title="Errors" style="height:100%">
+            <div>
+                <b-row align-h="start">
+                    <b-col cols="4">
+                        <b-pagination v-model="currentPage"
+                                      :total-rows="rows"
+                                      :per-page="perPage"
+                                      aria-controls="my-table"></b-pagination>
+                    </b-col>
+                    <b-col cols="3">
+                        <div style="display:inline-block">
+                            <p>Show </p>
+                        </div>
+                        <div style="display:inline-block">
+                            <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
+                        </div>
+                        <div style="display:inline-block">
+                            <p> per Page</p>
+                        </div>
+                    </b-col>
+                    <b-col cols="5">
+                        <b-form-fieldset>
+                            <b-form-input v-model="filter" placeholder="Type to Search" debounce="500"></b-form-input>
+                        </b-form-fieldset>
+                    </b-col>
+                </b-row>
+                <div class="d-flex flex-row">
+                    <div class="p-2">
+                        <div class="form-group">
+                            <label for="fromDate">From:</label>
+                            <datetime id="fromDate" type="datetime" v-model="fromDate"></datetime>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <div class="form-group">
+                            <label for="toDate">To:</label>
+                            <datetime id="toDate" type="datetime" v-model="toDate"></datetime>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <button type="button" class="btn btn-primary" v-on:click="refresh()" style="margin-top:35%">Refresh</button>
+                    </div>
+                </div>
+            </div>
+            <div style="height:calc(100% - 200px)">
+                <p class="mt-3">Current Page: {{ currentPage }}</p>
+
+                <b-table id="my-table"
+                         :fields="fields"
+                         :items="errors"
+                         :per-page="perPage"
+                         :current-page="currentPage"
+                         :outlined=true
+                         :striped="true"
+                         :busy="isBusy"
+                         ref="errors"
+                         small
+                         hover
+                         sticky-header
+                         responsive="lg"
+                         :filter="filter"
+                         style="height:calc(100% - 40px)">
+                    <template v-slot:table-busy>
+                        <div class="text-center my-2">
+                            <b-spinner class="align-middle"></b-spinner>
+                            <strong>Loading...</strong>
+                        </div>
+                    </template>
+                    <template #cell(message)="row">
+                        <div v-on:click="row.toggleDetails" style="cursor:pointer" >
+                                {{ row.item.message }}
+                        </div>
+                    </template>
+
+                    <template #row-details="row">
+                        <b-card>
+                            <b-row class="mb-2">
+                                <b-col sm="3" class="text-sm-right"><b>Error ID:</b></b-col>
+                                <b-col>{{ row.item.errorId }}</b-col>
+                            </b-row>
+                            <b-row class="mb-2">
+                                <b-col sm="3" class="text-sm-right"><b>All XML:</b></b-col>
+                                <v-xml-tree data="row.item.allXml" />
+                            </b-row>
+
+                            <b-button size="sm" @click="row.toggleDetails">Hide Details</b-button>
+                        </b-card>
+                    </template>
+                </b-table>
+            </div>
+        </b-card>
+    </div>
+</div>
